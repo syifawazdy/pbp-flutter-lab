@@ -29,7 +29,55 @@ Perbedaan utama ada pada inialisasi nilai (pemberian nilai) dari variabelnya, **
 
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas**
 1. Membuat app dengan flutter create counter_7
-2. Mengganti atribut floatingActionButton dengan dua FAB yang ditaruh dalam suatu Row
-3. Set onPressed FAB minus ke decrementCounter()
-4. Melakukan render genap atau ganjil menggunakan ternary dan mengganti warna dengan style
-5. Menggunakan conditional rendering untuk menghilangkan tombol - apabila nilai 0
+```
+flutter create counter_7
+cd counter_7
+```
+
+2. Menambahkan fungsi untuk melakukan pengurangan satu nilai pada variabel _counter pada class _CounterState.
+```
+void _decrementCounter() {
+    setState(() {
+      if (_counter > 0) _counter--;
+    });
+  }
+```
+3. Mengatur ganjil dengan var isOdd
+```
+  Widget build(BuildContext context) {
+    var isOdd = _counter % 2 == 1;
+```
+4. Mengganti warna ganjil dan genap dengan style sesuai ketentuan
+```
+ mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              isOdd ? 'GANJIL' : "GENAP",
+              style: TextStyle(color: isOdd ? Colors.blue : Colors.red),            
+            ),
+```
+
+5. Membuat tombol + dan - yang dapat menambah dan mengurangi angka sebanyak satu satuan
+```
+floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          children: <Widget>[
+            if (_counter != 0)
+              FloatingActionButton(
+                onPressed: _decrementCounter,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ),
+            const Spacer(),
+            FloatingActionButton(
+              onPressed: _incrementCounter,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
+              )
+          ],
+        ),
+      ), 
+    );
+```
