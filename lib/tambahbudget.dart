@@ -45,7 +45,7 @@ class _AddBudgetState extends State<AddBudgetPage> {
   ];
   final _formKey = GlobalKey<FormState>();
   String judul = "";
-  int nonimal = 0;
+  int nominal = 0;
   String? jenis;
 
   void submitForm(BuildContext ctx) {
@@ -53,7 +53,7 @@ class _AddBudgetState extends State<AddBudgetPage> {
       return;
     }
 
-    final newBudget = Budget(judul, nonimal, jenis!);
+    final newBudget = Budget(judul, nominal, jenis!);
     Provider.of<BudgetModel>(context, listen: false).add(newBudget);
 
     const snackBar = SnackBar(
@@ -95,7 +95,7 @@ class _AddBudgetState extends State<AddBudgetPage> {
                 label: "Nominal",
                 onEdit: (value) {
                   setState(() {
-                    nonimal = int.tryParse(value!) ?? nonimal;
+                    nominal = int.tryParse(value!) ?? nominal;
                   });
                 },
                 validator: (value) {

@@ -1,4 +1,4 @@
-# counter_7
+# README Tugas 7
 
 **Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.**
 
@@ -81,3 +81,28 @@ floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ), 
     );
 ```
+
+# README Tugas 8
+
+**Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.**
+Navigator.push digunakan untuk menambahkan route ke stack, sedangkan Navigator.pushReplacement digunakan untuk mengganti route yang ada di stack. Navigator.pushReplacement akan menghapus semua route yang ada di stack kecuali route pertama.
+
+**Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.**
+- Form: Untuk mengumpulkan elemen-elemen form
+- TextButton: Menampilkan tombol yang bisa diklik dengan teks
+- TextInput: Untuk teks input field
+- Drawer: Membentuk hamburger menu yang digunakan sebagai navigasi
+- DropdownButtonFormField: Membuat dropdown untuk memilih opsi yang ada pengeluaran/pemasukan
+- Card: Widget untuk menampilkan kumpulan data pada suatu kartu yang memiliki rounded corner 
+
+**Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).**
+Jenis-jenis event yang ada pada flutter, yaitu onPressed, onTap, onChanged, onSubmitted, onLongPress, onDoubleTap, onTapDown, onTapUp, onTapCancel, dan masih banyak lagi.
+
+**Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.**
+Cara kerja dari Navigator adalah dengan menambahkan route ke stack. Navigator akan menambahkan route ke stack jika fungsi Navigator.push dipanggil. Navigator akan mengganti route yang ada di stack jika fungsi Navigator.pushReplacement dipanggil. Navigator akan menghapus semua route yang ada di stack kecuali route pertama jika fungsi Navigator.pushReplacement dipanggil.
+
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.**
+- Memindahkan hamburger/drawer ke satu file tersendiri agar memiliki komponen sendiri
+- Membuat page untuk menambah budget pemasukan/pengeluaran pada file tambahbudget.dart
+- Menyimpan data di model.dart 
+- Membuat page untuk memperlihatkan daftar budget pada file daftarbudget.dart yang mengambil data dari model yang telah dibuat
