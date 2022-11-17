@@ -1,7 +1,13 @@
+import 'package:counter_7/hamburger.dart';
+import 'package:counter_7/model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (ctx) => BudgetModel(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -82,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+      drawer: const LabDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -103,8 +110,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              isOdd ? 'GANJIL' : "GENAP",
-              style: TextStyle(color: isOdd ? Colors.blue : Colors.red),            
+              isOdd ? 'GENAP' : "GANJIL",
+              style: TextStyle(color: isOdd ? Colors.blue : Colors.red),
             ),
             Text(
               '$_counter',
@@ -114,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
 
-    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
@@ -130,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: _incrementCounter,
               tooltip: 'Increment',
               child: const Icon(Icons.add),
-              )
+            )
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
