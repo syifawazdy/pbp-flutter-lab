@@ -112,7 +112,7 @@ Cara kerja dari Navigator adalah dengan menambahkan route ke stack. Navigator ak
 
 **Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?**
 
-Kita dapat mengembalikan data JSON tanpa membuat model terlebih dahulu. Nantinya, data tersebut akan kita dapatkan dalam bentuk Map[str, dynamic]. Namun, cara ini bukanlah best practice sebab akan membuat kode kita menjadi sulit terbaca dan dipahami akibat valuenya yang dinamis
+Pengambilan data JSON tanpa membuat model terlebih dahulu dapat dilakukan dengan menggunakan fungsi jsonDecode. Pengambilan data JSON tanpa membuat model terlebih dahulu lebih baik daripada membuat model sebelum melakukan pengambilan data JSON karena pengambilan data JSON tanpa membuat model terlebih dahulu lebih mudah dan lebih cepat.
 
 **Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.**
 
