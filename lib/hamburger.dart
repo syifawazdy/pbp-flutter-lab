@@ -1,4 +1,5 @@
 import 'package:counter_7/databudget.dart';
+import 'package:counter_7/watchlist/data.dart';
 import 'package:flutter/material.dart';
 
 import 'tambahbudget.dart';
@@ -46,6 +47,17 @@ class _LabDrawerState extends State<LabDrawer> {
                 context,
                 MaterialPageRoute(
                   builder: (ctx) => const BudgetListPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text("My Watch List"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => const WatchListingPage(),
                 ),
               );
             },

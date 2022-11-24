@@ -106,3 +106,37 @@ Cara kerja dari Navigator adalah dengan menambahkan route ke stack. Navigator ak
 - Membuat page untuk menambah budget pemasukan/pengeluaran pada file tambahbudget.dart
 - Menyimpan data di model.dart 
 - Membuat page untuk memperlihatkan daftar budget pada file daftarbudget.dart yang mengambil data dari model yang telah dibuat
+
+
+# README Tugas 9
+
+**Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?**
+
+Kita dapat mengembalikan data JSON tanpa membuat model terlebih dahulu. Nantinya, data tersebut akan kita dapatkan dalam bentuk Map[str, dynamic]. Namun, cara ini bukanlah best practice sebab akan membuat kode kita menjadi sulit terbaca dan dipahami akibat valuenya yang dinamis
+
+**Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.**
+
+- Checkbox: Menampilkan checkbox
+- Card: Membuat suatu rounded corner box
+- Expanded: Memperbesar widget child sepanjang baris dari Row/Column
+- FutureBuilder: Melakukan update child berdasarkan hasil future yang diberikan
+- ListView: Menampung widget dan dapat dibuat banyak secara otomatis dengan bantuan builder
+- Spacer: Memberi jarak antar widget
+
+**Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.**
+
+Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter adalah dengan menggunakan fungsi jsonDecode untuk mengubah data json menjadi data yang dapat dibaca oleh flutter. Setelah itu, data yang telah diubah menjadi data yang dapat dibaca oleh flutter dapat ditampilkan pada flutter.
+
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.**
+
+- Menambahkan ListTile yang mengarah ke page listing pada Drawer.
+- Membuat model WatchList di model/watchlist.dart yang digenerate dari response JSON endpoint.
+- Menambahkan dependency http untuk melakukan fetch data.
+- Membuat function fetcher ke endpoint JSON (model/fetcher.dart)
+- Membuat page list baru di watchlist/listing.dart.
+- Melakukan fetch dan menampilkan data dengan FutureBuilder
+- Menampilkan list card menggunakan ListView
+- Membuat page detail baru di watchlist/detail.dart
+- Menerima data di page dari menu listing agar tidak melakukan request lagi
+- Menampilkan data sesuai dengan spesifikasi yang ada di soal
+
